@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:my_app/widgets/alertDialog.dart';
 
 void main() => runApp(MyApp());
 
