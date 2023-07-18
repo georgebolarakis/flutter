@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "104753424624",
+    "firebase_url": "https://wedding-app-60fa9-default-rtdb.firebaseio.com",
+    "project_id": "wedding-app-60fa9",
+    "storage_bucket": "wedding-app-60fa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104753424624:android:28be19629b9f4e8230fa35",
+        "android_client_info": {
+          "package_name": "com.example.wedding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104753424624-ijqhd5su12s6sqf1nl7agcj1p7ja6lac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfLfkiEa7WiD7iCAFES7JYzHTr_Ja9oQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104753424624-ijqhd5su12s6sqf1nl7agcj1p7ja6lac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

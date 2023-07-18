@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider, PhoneAuthProvider;
+import 'package:provider/provider.dart';
+
+import 'app_state.dart';
+import 'widgets/widgets.dart';
+import 'authentication.dart';
 
 //Custom Widgets
 //Icon - Text
 //Row(Icon(), Text())
 //class IconAndText(icon, text_string)
-import '../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,6 +38,19 @@ class HomeScreen extends StatelessWidget {
               Icons.location_city_outlined,
               'San Fransisco',
             ),
+
+            //we need to add some authentication functionality
+            Consumer<ApplicationState>(
+              builder: (context, appState, _) => AuthFunc(
+                //we pick it up from the appState
+                loggedIn: appState.loggedIn,
+                signOut: () {
+                  //firebase is handling our authentication
+                  FirebaseAuth.instance.signOut();
+                },
+              ),
+            ),
+
             const SizedBox(
               height: 18,
             ),
