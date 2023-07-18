@@ -10,17 +10,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "app",
-      home: HomeScreen(),
+      home: HomeScreen1(),
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen1 extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreen1State createState() => _HomeScreen1State();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreen1State extends State<HomeScreen1> {
   //initial var
   String _selection = "None";
 
