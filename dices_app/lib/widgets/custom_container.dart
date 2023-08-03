@@ -1,7 +1,6 @@
 import 'package:darts_app/widgets/dice_roller.dart';
 import 'package:flutter/material.dart';
 
-import 'package:darts_app/widgets/styled_text.dart';
 
 Alignment? startAlignment;
 // ignore: prefer_const_declarations
