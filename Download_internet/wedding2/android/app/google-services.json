@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717636486538",
+    "project_id": "wedding-app-8fdb6",
+    "storage_bucket": "wedding-app-8fdb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717636486538:android:6a32e52f0d1d7425ba3473",
+        "android_client_info": {
+          "package_name": "com.example.wedding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyvKhYF5mYY63hhAWT5tlkyEmiwxAJp7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
