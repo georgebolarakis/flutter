@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../widgets/start_quiz_button.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
 
   static const String mainText = 'Learn Flutter the fun way!';
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          StartQuizButton(() {}),
+          StartQuizButton(startQuiz),
         ],
       ),
     );

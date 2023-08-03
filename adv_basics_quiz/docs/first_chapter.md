@@ -27,3 +27,16 @@ The data container will also never get re-assigned but it provides extra info to
 Are required
 **named arguments**
 Are optional and if we require them we need to add the _required_ tag
+
+## Render Content conditionally
+
+
+## Lifting State Up
+we need for a widget to accept a function
+and we need to add the initial state in the 
+initState() method as shown in Quiz and startScreen
+
+## Lifecycle
+- initState(): Executed by Flutter when the StatefulWidget's State object is **initialized**
+- build(): Executed by Flutter when the Widget is built for the **first time** AND after setState() was called
+- dispose(): Executed by Flutter right before the Widget will be **deleted** 
