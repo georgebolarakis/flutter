@@ -1,7 +1,10 @@
+import 'dart:math';
 import 'package:darts_app/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_container.dart';
+
+final randomizer = Random();
 
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
@@ -10,11 +13,17 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var activeDiceImage = 'assets/images/dice-2.png';
+  //var activeDiceImage = 'assets/images/dice-2.png';
+  var currentDiceRoll = 1;
 
   void rollDice() {
+    //var diceRoll = Random().nextInt(6) + 1; //this will give us a valute between 1 and 6
     setState(() {
-      activeDiceImage = 'assets/images/dice-4.png';
+      //by setting the randomizer we save space since we don't need to
+      //re run Random every time the app is build
+      //since it just gets initialized ones and used many times
+      currentDiceRoll = randomizer.nextInt(6) + 1;
+      //activeDiceImage = 'assets/images/dice-$diceRoll.png';
     });
   }
 
@@ -33,7 +42,7 @@ class _DiceRollerState extends State<DiceRoller> {
           height: 20,
         ),
         Image.asset(
-          activeDiceImage,
+          'assets/images/dice-$currentDiceRoll.png',
           width: 200,
         ),
         TextButton(
