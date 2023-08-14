@@ -1,5 +1,6 @@
 import 'package:adv_basics_quiz/data/questions.dart';
 import 'package:adv_basics_quiz/screens/questions_screen.dart';
+import 'package:adv_basics_quiz/screens/results_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/start_screen.dart';
@@ -40,10 +41,17 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswers.length == questions.length) {
       setState(() {
         //and we reset the answers to an empty list
-        selectedAnswers = [];
-        activeScreen = 'start-screen';
+        //selectedAnswers = [];
+        activeScreen = 'results-screen';
       });
     }
+  }
+
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = 'questions-screen';
+    });
   }
 
   @override
@@ -54,6 +62,13 @@ class _QuizState extends State<Quiz> {
       //we are lifting the state here
       screenWidget = QuestionsScreen(
         onSelectAnswer: chooseAnswer,
+      );
+    }
+
+    if (activeScreen == 'results-screen') {
+      screenWidget = ResultsScreen(
+        chosenAnswers: selectedAnswers,
+        onRestart: restartQuiz,
       );
     }
 
