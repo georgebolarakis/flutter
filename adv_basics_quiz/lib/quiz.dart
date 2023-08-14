@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'screens/start_screen.dart';
 
+//we need to lift the state up since this class has access to the QuestionScreen as well as the ResultsScreen
+
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
 
@@ -11,6 +13,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  final List<String> selectedAnswers = [];
   // Widget? activeScreen;
 
   // @override
@@ -26,12 +29,19 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+// we are adding the selected answer to the selectedAnswers List
+// we need to forward this function to QuestionsScreen
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget screenWidget = StartScreen(switchScreen);
     // activeScreen == 'start-screen' ? StartScreen(switchScreen) : const QuestionsScreen();
     if (activeScreen == 'questions-screen') {
-      screenWidget = const QuestionsScreen();
+      //we are lifting the state here
+      screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer,);
     }
 
     return MaterialApp(
