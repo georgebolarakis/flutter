@@ -1,3 +1,4 @@
+import 'package:adv_basics_quiz/data/questions.dart';
 import 'package:adv_basics_quiz/screens/questions_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  final List<String> selectedAnswers = [];
+  List<String> selectedAnswers = [];
   // Widget? activeScreen;
 
   // @override
@@ -33,6 +34,16 @@ class _QuizState extends State<Quiz> {
 // we need to forward this function to QuestionsScreen
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
+
+    // we need to keep track of which question is the last so we won't get an error
+    // when we exceed the list lenght
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        //and we reset the answers to an empty list
+        selectedAnswers = [];
+        activeScreen = 'start-screen';
+      });
+    }
   }
 
   @override
@@ -41,7 +52,9 @@ class _QuizState extends State<Quiz> {
     // activeScreen == 'start-screen' ? StartScreen(switchScreen) : const QuestionsScreen();
     if (activeScreen == 'questions-screen') {
       //we are lifting the state here
-      screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer,);
+      screenWidget = QuestionsScreen(
+        onSelectAnswer: chooseAnswer,
+      );
     }
 
     return MaterialApp(
