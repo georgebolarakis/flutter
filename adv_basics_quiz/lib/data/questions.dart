@@ -1,6 +1,7 @@
 
 import '../models/quiz_question.dart';
 
+//The correct answers are always first that's the reason we need to create another list and shuffle the answers
 const questions = [
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
